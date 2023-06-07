@@ -3,3 +3,4 @@
   inputs = ["log_json"]
   endpoint = "${PAPERTRAIL_ENDPOINT}"
   encoding.codec = "${PAPERTRAIL_ENCODING_CODEC:-json}"
+  process="{{ .fly.app.instance }}({{ .fly.region }})"

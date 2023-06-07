@@ -1,5 +1,14 @@
-app = "fly-log-shipper-example"
+# fly.toml app configuration file generated for codeday-fly-papertrail on 2023-06-06T17:10:41-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-[metrics]
-  port = 9598
-  path = "/metrics"
+app = "codeday-fly-papertrail"
+
+[[services]]
+  http_checks = []
+  internal_port = 8686
+
+[env]
+  SUBJECT = "logs.codeday-gql.>"
+  PAPERTRAIL_ENCODING_CODEC = "text"

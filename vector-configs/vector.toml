@@ -20,6 +20,8 @@
   inputs = ["nats"]
   source = '''
   . = parse_json!(.message)
+  .host = .fly.app.name
+  .severity = .log.level
   '''
 
 [sinks.fly_log_metrics_prometheus]
